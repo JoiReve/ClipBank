@@ -1,0 +1,42 @@
+# CMake / Ninja build output
+/build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+build.ninja
+.ninja_deps
+.ninja_log
+CMakeUserPresets.json
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# ClipBank runtime libraries and scratch output
+/library/
+/.acceptance/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.log
+
+# Editor / language-server caches
+.cache/
+/.vscode/ipch/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Python bytecode (integration tests)
+__pycache__/
+*.pyc
+
+# Local Claude Code settings
+.claude/settings.local.json

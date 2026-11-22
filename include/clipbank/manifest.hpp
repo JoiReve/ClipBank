@@ -16,4 +16,4 @@ nlohmann::json build_manifest(const LibraryPaths& paths, Db& db,
                               const Toolchain& toolchain,
                               const std::string& run_filter = std::string());
 
-}  // namespace cb
+} // namespace cb

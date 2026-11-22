@@ -10,8 +10,8 @@ namespace cb {
 namespace fs = std::filesystem;
 
 struct FileStat {
-  int64_t size = 0;
-  int64_t mtime_ns = 0;
+    int64_t size = 0;
+    int64_t mtime_ns = 0;
 };
 
 FileStat stat_file(const fs::path& path);
@@ -46,4 +46,4 @@ std::string relative_path_string(const fs::path& path, const fs::path& base);
 // read with InternalError when exceeded.
 std::string sha256_file(const fs::path& path, int64_t deadline_ms = 0);
 
-}  // namespace cb
+} // namespace cb

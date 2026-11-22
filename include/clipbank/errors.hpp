@@ -9,45 +9,45 @@ namespace cb {
 //   clipbank: 0 ok, 2 usage/config, 3 missing dependency,
 //             4 input/decode, 5 internal/DB, 6 verify failed.
 class AppError : public std::runtime_error {
- public:
-  explicit AppError(std::string message) : std::runtime_error(std::move(message)) {}
-  virtual int exit_code() const noexcept = 0;
+public:
+    explicit AppError(std::string message) : std::runtime_error(std::move(message)) {}
+    virtual int exit_code() const noexcept = 0;
 };
 
 class UsageError : public AppError {
- public:
-  using AppError::AppError;
-  int exit_code() const noexcept override { return 2; }
+public:
+    using AppError::AppError;
+    int exit_code() const noexcept override { return 2; }
 };
 
 class DependencyError : public AppError {
- public:
-  using AppError::AppError;
-  int exit_code() const noexcept override { return 3; }
+public:
+    using AppError::AppError;
+    int exit_code() const noexcept override { return 3; }
 };
 
 class InputError : public AppError {
- public:
-  using AppError::AppError;
-  int exit_code() const noexcept override { return 4; }
+public:
+    using AppError::AppError;
+    int exit_code() const noexcept override { return 4; }
 };
 
 class DbError : public AppError {
- public:
-  using AppError::AppError;
-  int exit_code() const noexcept override { return 5; }
+public:
+    using AppError::AppError;
+    int exit_code() const noexcept override { return 5; }
 };
 
 class InternalError : public AppError {
- public:
-  using AppError::AppError;
-  int exit_code() const noexcept override { return 5; }
+public:
+    using AppError::AppError;
+    int exit_code() const noexcept override { return 5; }
 };
 
 class VerifyError : public AppError {
- public:
-  using AppError::AppError;
-  int exit_code() const noexcept override { return 6; }
+public:
+    using AppError::AppError;
+    int exit_code() const noexcept override { return 6; }
 };
 
-}  // namespace cb
+} // namespace cb

@@ -16,8 +16,8 @@ std::string ffmpeg_binary();
 std::string ffprobe_binary();
 
 struct ProbeOutcome {
-  ProbeInfo info;
-  std::vector<std::string> warnings;
+    ProbeInfo info;
+    std::vector<std::string> warnings;
 };
 
 // ffprobe metadata + vfrdet (unless detect_vfr is false).
@@ -44,16 +44,16 @@ int64_t count_video_frames(const fs::path& path,
                            std::chrono::milliseconds timeout = std::chrono::milliseconds(600000));
 
 struct Toolchain {
-  std::string ffmpeg_version;
-  std::string ffprobe_version;
-  std::string encoder = "libx264";
-  std::string fingerprint;
+    std::string ffmpeg_version;
+    std::string ffprobe_version;
+    std::string encoder = "libx264";
+    std::string fingerprint;
 
-  static Toolchain detect();
-  nlohmann::json to_json() const;
+    static Toolchain detect();
+    nlohmann::json to_json() const;
 };
 
 void ensure_dependencies();
 void ensure_ffprobe_available();
 
-}  // namespace cb
+} // namespace cb
